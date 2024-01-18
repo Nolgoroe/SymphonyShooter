@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPlayOnAwake: 0
-  koreography: {fileID: 11400000, guid: a155414783b02d44cb1ff54c2deae010, type: 2}
+  koreography: {fileID: 11400000, guid: 81ffa40b91295544ea07139144714397, type: 2}
   targetKoreographer: {fileID: 0}
 --- !u!82 &537630455
 AudioSource:

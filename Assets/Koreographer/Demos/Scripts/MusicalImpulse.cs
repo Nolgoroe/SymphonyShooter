@@ -42,6 +42,8 @@ namespace SonicBloom.Koreo.Demos
 			vel.y = jumpSpeed;
 
 			rigidbodyCom.velocity = vel;
+
+			Debug.Log("Test");
 		}
 	}
 }

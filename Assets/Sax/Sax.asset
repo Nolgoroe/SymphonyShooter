@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: Sax
+  m_EditorClassIdentifier: 
+  mSourceClip: {fileID: 8300000, guid: e13b31f66e31afa4fb2217224e7fdde9, type: 3}
+  mAudioFilePath: 
+  mSampleRate: 44100
+  mIgnoreLatencyOffset: 0
+  mTempoSections:
+  - sectionName: Section
+    startSample: 0
+    samplesPerBeat: 20353.8258
+    beatsPerMeasure: 4
+    bStartNewMeasure: 0
+  mTracks:
+  - {fileID: 11400000, guid: 92fae3c9697267045a2a3c4824908490, type: 2}
+  - {fileID: 11400000, guid: b6451e05c3eef8c44b45d9ae3200471a, type: 2}

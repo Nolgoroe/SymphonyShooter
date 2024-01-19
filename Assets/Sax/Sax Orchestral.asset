@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: Sax Orchestral
+  m_EditorClassIdentifier: 
+  mSourceClip: {fileID: 8300000, guid: 54a7a740d1c4d5847a25140f8445802f, type: 3}
+  mAudioFilePath: 
+  mSampleRate: 44100
+  mIgnoreLatencyOffset: 0
+  mTempoSections:
+  - sectionName: Section
+    startSample: 0
+    samplesPerBeat: 88200
+    beatsPerMeasure: 4
+    bStartNewMeasure: 0
+  mTracks:
+  - {fileID: 11400000, guid: 997d497b3bea1b14e838f0828f6b5524, type: 2}
+  - {fileID: 11400000, guid: e9c47814b6377c04ba175a5c4ac22fbf, type: 2}
+  - {fileID: 11400000, guid: 56e1fc6eb0c65ae47a2b4a6e29016937, type: 2}
+  - {fileID: 11400000, guid: 8a66ce89025b70c4b94108319e828d61, type: 2}
+  - {fileID: 11400000, guid: 55080022df3268146b9089161f3e7e4d, type: 2}
+  - {fileID: 11400000, guid: 8681f0c52b5483643a41efd29a407d59, type: 2}

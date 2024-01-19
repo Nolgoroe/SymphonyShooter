@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 1, a: 1}
   targetVisuals: {fileID: 172397500}
-  keyboardButton: 107
+  keyboardButton: 0
   matchedPayloads:
   - D
   - D#/Eb
@@ -584,6 +584,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1622623264}
         m_TargetAssemblyTypeName: 
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SonicBloom.Koreo.Demos.RhythmGameController, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -1254,7 +1266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0, g: 1, b: 0, a: 1}
   targetVisuals: {fileID: 401469493}
-  keyboardButton: 106
+  keyboardButton: 0
   matchedPayloads:
   - C
   - C#/Db
@@ -1560,7 +1572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPlayOnAwake: 0
-  koreography: {fileID: 11400000, guid: 81ffa40b91295544ea07139144714397, type: 2}
+  koreography: {fileID: 11400000, guid: b4c01a4a89c1b4a468dd6525df4b4f69, type: 2}
   targetKoreographer: {fileID: 0}
 --- !u!82 &537630455
 AudioSource:
@@ -2050,7 +2062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0.49803922, b: 0, a: 1}
   targetVisuals: {fileID: 1025525510}
-  keyboardButton: 100
+  keyboardButton: 0
   matchedPayloads:
   - G#/Ab
   - A
@@ -2153,7 +2165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0.5803922, g: 0, b: 0.827451, a: 1}
   targetVisuals: {fileID: 1060665674}
-  keyboardButton: 108
+  keyboardButton: 0
   matchedPayloads:
   - E
   - F
@@ -2402,7 +2414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0, b: 0, a: 1}
   targetVisuals: {fileID: 1146996547}
-  keyboardButton: 115
+  keyboardButton: 0
   matchedPayloads:
   - F#/Gb
   - G
@@ -3511,7 +3523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a6779e70b3c42f9b49aa854490bbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventID: Piano
+  eventID: Synth
   hitWindowRangeInMS: 80
   noteSpeed: 1
   noteObjectArchetype: {fileID: 887109968}
@@ -3522,7 +3534,7 @@ MonoBehaviour:
   - {fileID: 401469495}
   - {fileID: 172397502}
   - {fileID: 1060665676}
-  leadInTime: 5
+  leadInTime: 3
   audioCom: {fileID: 537630455}
 --- !u!4 &1622623265
 Transform:
@@ -3638,7 +3650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 1, g: 1, b: 0, a: 1}
   targetVisuals: {fileID: 1649405750}
-  keyboardButton: 102
+  keyboardButton: 0
   matchedPayloads:
   - A#/Bb
   - B

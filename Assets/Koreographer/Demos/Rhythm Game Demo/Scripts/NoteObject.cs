@@ -37,6 +37,16 @@ namespace SonicBloom.Koreo.Demos
 		#region Methods
 
 		int differenceFromStartToEndSample = 0;
+
+
+		private string instrumentName;
+
+		public void InitNote(string eventID)
+        {
+			instrumentName = eventID;
+
+		}
+
 		// Prepares the Note Object for use.
 		public void Initialize(KoreographyEvent evt, Color color, LaneController laneCont, RhythmGameController gameCont)
 		{
@@ -49,7 +59,7 @@ namespace SonicBloom.Koreo.Demos
 			differenceFromStartToEndSample = trackedEvent.StartSample - trackedEvent.EndSample;
 			//Debug.Log("Note: " + trackedEvent.GetTextValue() + " Start: " + trackedEvent.StartSample);
 			//Debug.Log("End: " + trackedEvent.EndSample);
-			Debug.Log("difference: " + differenceFromStartToEndSample);
+			//Debug.Log("difference: " + differenceFromStartToEndSample);
 		}
 
 		// Resets the Note Object to its default state.
@@ -66,8 +76,18 @@ namespace SonicBloom.Koreo.Demos
 
 			UpdatePosition();
 
-			if (transform.position.y <= laneController.DespawnY)
+			if (transform.position.y <= -3)
 			{
+				Koreography playingKoreo = Koreographer.Instance.GetKoreographyAtIndex(0);
+				double samplesPerBeat = playingKoreo.GetSamplesPerBeat(0);
+				//float time = 1f / (float)samplesPerBeat;
+				float spanInBeatsOfNote = (float)differenceFromStartToEndSample / (float)samplesPerBeat;
+
+				float beatsInAsecond = (float)playingKoreo.GetBPM(0) / 60;
+				float seconds = Mathf.Abs(spanInBeatsOfNote) / beatsInAsecond;
+
+				Debug.Log("Instrument beat: " + seconds);
+
 				gameController.ReturnNoteObjectToPool(this);
 				Reset();
 			}
@@ -89,6 +109,7 @@ namespace SonicBloom.Koreo.Demos
 
 			float beatsInAsecond = (float)playingKoreo.GetBPM(0)/60;
 			float seconds = Mathf.Abs(spanInBeatsOfNote)/beatsInAsecond;
+
 			scale.y = (targetUnitHeight / baseUnitHeight) + seconds;	
 			transform.localScale = scale;
 		}
@@ -124,14 +145,14 @@ namespace SonicBloom.Koreo.Demos
 		{
 			bool bMissed = true;
 
-			if (enabled)
-			{
-				int noteTime = trackedEvent.StartSample;
-				int curTime = gameController.DelayedSampleTime;
-				int hitWindow = gameController.HitWindowSampleWidth;
+			//if (enabled)
+			//{
+			//	int noteTime = trackedEvent.StartSample;
+			//	int curTime = gameController.DelayedSampleTime;
+			//	int hitWindow = gameController.HitWindowSampleWidth;
 
-				bMissed = (curTime - noteTime > hitWindow);
-			}
+			//	bMissed = (curTime - noteTime > hitWindow);
+			//}
 			
 			return bMissed;
 		}

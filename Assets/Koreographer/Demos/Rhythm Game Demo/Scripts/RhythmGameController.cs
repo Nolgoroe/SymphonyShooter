@@ -190,17 +190,19 @@ namespace SonicBloom.Koreo.Demos
 		{
 			NoteObject retObj;
 
-			if (noteObjectPool.Count > 0)
-			{
-				retObj = noteObjectPool.Pop();
-			}
-			else
-			{
-				retObj = GameObject.Instantiate<NoteObject>(noteObjectArchetype);
-			}
+			retObj = GameObject.Instantiate<NoteObject>(noteObjectArchetype);
+
+			//if (noteObjectPool.Count > 0)
+			//{
+			//	retObj = noteObjectPool.Pop();
+			//}
+			//else
+			//{
+			//}
 			
 			retObj.gameObject.SetActive(true);
-			retObj.enabled = true;
+			//retObj.enabled = true;
+			retObj.InitNote(eventID);
 
 			return retObj;
 		}
@@ -210,10 +212,11 @@ namespace SonicBloom.Koreo.Demos
 		{
 			if (obj != null)
 			{
-				obj.enabled = false;
-				obj.gameObject.SetActive(false);
+				Destroy(obj.gameObject);
+				//obj.enabled = false;
+				//obj.gameObject.SetActive(false);
 
-				noteObjectPool.Push(obj);
+				//noteObjectPool.Push(obj);
 			}
 		}
 

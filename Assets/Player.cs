@@ -15,19 +15,33 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+        InputManager();
+    }
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     private void InputManager()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
         moveDir = new Vector2(moveX, moveY).normalized;
     }
 
     private void Move()
     {
+        rb.velocity = new Vector2 (moveDir.x * moveSpeed, moveDir.y * moveSpeed);
+    }
 
+
+
+
+
+
+    public Vector2 ReturnMoveDirection()
+    {
+        return moveDir;
     }
 }

@@ -37,7 +37,7 @@ public class MapController : MonoBehaviour
             return;
         }
 
-        if(player.ReturnMoveDirection().x > 0/* && player.ReturnMoveDirection().y == 0*/) // right
+        if(player.ReturnCurrentMoveDirection().x > 0/* && player.ReturnMoveDirection().y == 0*/) // right
         {
             Vector3 pointToCheck = currentChunk.ReturnDirectionToPosition(Directions.Right).pointPosition.position;
             if (!Physics2D.OverlapCircle(pointToCheck, checkerRadius, terrainMask))
@@ -47,7 +47,7 @@ public class MapController : MonoBehaviour
                 SpawnChunk();
             }
         }
-        if(player.ReturnMoveDirection().x < 0 /*&& player.ReturnMoveDirection().y == 0*/) // left
+        if(player.ReturnCurrentMoveDirection().x < 0 /*&& player.ReturnMoveDirection().y == 0*/) // left
         {
             Vector3 pointToCheck = currentChunk.ReturnDirectionToPosition(Directions.Left).pointPosition.position;
             if (!Physics2D.OverlapCircle(pointToCheck, checkerRadius, terrainMask))
@@ -57,7 +57,7 @@ public class MapController : MonoBehaviour
                 SpawnChunk();
             }
         }
-        if(/*player.ReturnMoveDirection().x == 0 &&*/ player.ReturnMoveDirection().y > 0) // up
+        if(/*player.ReturnMoveDirection().x == 0 &&*/ player.ReturnCurrentMoveDirection().y > 0) // up
         {
             Vector3 pointToCheck = currentChunk.ReturnDirectionToPosition(Directions.Up).pointPosition.position;
             if (!Physics2D.OverlapCircle(pointToCheck, checkerRadius, terrainMask))
@@ -67,7 +67,7 @@ public class MapController : MonoBehaviour
                 SpawnChunk();
             }
         }
-        if(/*player.ReturnMoveDirection().x == 0 &&*/ player.ReturnMoveDirection().y < 0) // down
+        if(/*player.ReturnMoveDirection().x == 0 &&*/ player.ReturnCurrentMoveDirection().y < 0) // down
         {
             Vector3 pointToCheck = currentChunk.ReturnDirectionToPosition(Directions.Down).pointPosition.position;
             if (!Physics2D.OverlapCircle(pointToCheck, checkerRadius, terrainMask))
@@ -77,7 +77,7 @@ public class MapController : MonoBehaviour
                 SpawnChunk();
             }
         }
-        if(player.ReturnMoveDirection().x > 0 && player.ReturnMoveDirection().y > 0) // right Up
+        if(player.ReturnCurrentMoveDirection().x > 0 && player.ReturnCurrentMoveDirection().y > 0) // right Up
         {
             Vector3 pointToCheck = currentChunk.ReturnDirectionToPosition(Directions.RightUp).pointPosition.position;
             if (!Physics2D.OverlapCircle(pointToCheck, checkerRadius, terrainMask))
@@ -87,7 +87,7 @@ public class MapController : MonoBehaviour
                 SpawnChunk();
             }
         }
-        if(player.ReturnMoveDirection().x > 0 && player.ReturnMoveDirection().y < 0) // right Down
+        if(player.ReturnCurrentMoveDirection().x > 0 && player.ReturnCurrentMoveDirection().y < 0) // right Down
         {
             Vector3 pointToCheck = currentChunk.ReturnDirectionToPosition(Directions.RightDown).pointPosition.position;
             if (!Physics2D.OverlapCircle(pointToCheck, checkerRadius, terrainMask))
@@ -97,7 +97,7 @@ public class MapController : MonoBehaviour
                 SpawnChunk();
             }
         }
-        if(player.ReturnMoveDirection().x < 0 && player.ReturnMoveDirection().y > 0) // left up
+        if(player.ReturnCurrentMoveDirection().x < 0 && player.ReturnCurrentMoveDirection().y > 0) // left up
         {
             Vector3 pointToCheck = currentChunk.ReturnDirectionToPosition(Directions.LeftUp).pointPosition.position;
             if (!Physics2D.OverlapCircle(pointToCheck, checkerRadius, terrainMask))
@@ -107,7 +107,7 @@ public class MapController : MonoBehaviour
                 SpawnChunk();
             }
         }
-        if(player.ReturnMoveDirection().x < 0 && player.ReturnMoveDirection().y < 0) // left down
+        if(player.ReturnCurrentMoveDirection().x < 0 && player.ReturnCurrentMoveDirection().y < 0) // left down
         {
             Vector3 pointToCheck = currentChunk.ReturnDirectionToPosition(Directions.LeftDown).pointPosition.position;
             if (!Physics2D.OverlapCircle(pointToCheck, checkerRadius, terrainMask))

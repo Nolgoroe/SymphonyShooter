@@ -11,7 +11,7 @@ public class KnifeSpawner : WeaponSpawnerBase
     }
 
 
-    protected override void Spawn()
+    public override void Spawn()
     {
         base.Spawn();
         GameObject go = Instantiate(weaponSO.WeaponPrefab, transform.position, weaponSO.WeaponPrefab.transform.rotation);
@@ -21,7 +21,19 @@ public class KnifeSpawner : WeaponSpawnerBase
         if(weapon)
         {
             weapon.InitWeapon(weaponSO.Speed, weaponSO.DMG, weaponSO.Pierce);
-            weapon.SetDirection(player.ReturnLatestMoveDirection());
+
+            // Get mouse position in world space
+            Vector3 mouseScreenPos = Input.mousePosition;
+            mouseScreenPos.z = Camera.main.nearClipPlane; // or adjust for depth if needed
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+            mouseWorldPos.z = 0f; // flatten Z for 2D games
+
+            // Calculate direction
+            Vector3 direction = (mouseWorldPos - transform.position).normalized;
+
+            // Set the direction to the weapon
+            weapon.SetDirection(direction);
+            //weapon.SetDirection(player.ReturnLatestMoveDirection());
         }
     }
 }

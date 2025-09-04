@@ -8,26 +8,26 @@ public class WeaponSpawnerBase : MonoBehaviour
 
     protected Player player;
 
-    private float currentCooldown;
+    //private float currentCooldown;
 
     protected virtual void Start()
     {
         player = FindAnyObjectByType<Player>();
 
-        currentCooldown = weaponSO.SpawnCooldown;
+        //currentCooldown = weaponSO.SpawnCooldown;
     }
 
     protected virtual void Update()
     {
-        currentCooldown -= Time.deltaTime;
-        if (currentCooldown <= 0)
-        {
-            Spawn();
-        }
+        //currentCooldown -= Time.deltaTime;
+        //if (currentCooldown <= 0)
+        //{
+        //    Spawn();
+        //}
     }
 
-    protected virtual void Spawn()
+    public virtual void Spawn()
     {
-        currentCooldown = weaponSO.SpawnCooldown;
+        //currentCooldown = weaponSO.SpawnCooldown;
     }
 }

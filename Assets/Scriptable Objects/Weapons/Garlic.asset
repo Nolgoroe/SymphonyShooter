@@ -15,5 +15,5 @@ MonoBehaviour:
   weaponPrefab: {fileID: 8813497010069436830, guid: 828abac4f4b3bff4390280bc52be3bd1, type: 3}
   dmg: 5
   speed: 0
-  spawnCooldown: 4
+  spawnCooldown: 0.1
   pierce: 0

@@ -11,7 +11,7 @@ public class GarlicSpawner : WeaponSpawnerBase
 
     }
 
-    protected override void Spawn()
+    public override void Spawn()
     {
         base.Spawn();
         GameObject go = Instantiate(weaponSO.WeaponPrefab, transform.position, weaponSO.WeaponPrefab.transform.rotation);

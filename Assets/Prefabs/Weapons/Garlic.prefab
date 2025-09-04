@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb680e05816c33a4283bbc214b671b3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destrroyAfterSeconds: 3
+  destrroyAfterSeconds: 0.1
   markedEnemies: []
 --- !u!58 &7038528898008413246
 CircleCollider2D:

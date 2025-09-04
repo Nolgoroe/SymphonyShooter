@@ -17,6 +17,9 @@ public class MapController : MonoBehaviour
     [SerializeField] float maxChunkDistanceToPlayer;
     float distanceToChunk;
 
+    [SerializeField] int minEnemiesPerChunk;
+    [SerializeField] int maxEnemiesPerChunk;
+    [SerializeField] EnemyBase[] enemyPrefabs;
 
     void Start()
     {
@@ -131,7 +134,38 @@ public class MapController : MonoBehaviour
         {
             latestChunkSpawned = data;
             spawnedChunks.Add(data);
+
+            SpawnEnemiesInChunk(data);
         }
+    }
+
+    private void SpawnEnemiesInChunk(ChunkData chunk)
+    {
+        int enemyCount = Random.Range(minEnemiesPerChunk, maxEnemiesPerChunk + 1);
+
+        for (int i = 0; i < enemyCount; i++)
+        {
+            // Pick a random enemy prefab
+            EnemyBase enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+
+            // Pick a random position within the chunk bounds
+            Vector3 spawnPos = GetRandomPositionInChunk(chunk);
+
+            Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        }
+    }
+
+    private Vector3 GetRandomPositionInChunk(ChunkData chunk)
+    {
+        Collider2D collider = chunk.GetComponent<Collider2D>();
+        if (collider == null)
+            return chunk.transform.position;
+
+        Bounds bounds = collider.bounds;
+
+        float x = Random.Range(bounds.min.x, bounds.max.x);
+        float y = Random.Range(bounds.min.y, bounds.max.y);
+        return new Vector3(x, y, 0f);
     }
 
     private void ChunkOptemization()

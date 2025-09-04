@@ -13,7 +13,7 @@ public class InstrumentDetector : MonoBehaviour
 
     int differenceFromStartToEndSample = 0;
 
-    public GameObject prefab;
+    public WeaponSpawnerBase weapon;
 
     Koreography playingKoreo;
 
@@ -38,7 +38,11 @@ public class InstrumentDetector : MonoBehaviour
     {
         //this is where we want to do something for the span of the whole event
         Debug.Log("Instrument: " + eventID + " One shot");
-        //Instantiate(prefab);
+
+        if(weapon)
+        {
+            weapon.Spawn();
+        }
     }
     private void DetectPlaySpan(KoreographyEvent evt)
     {

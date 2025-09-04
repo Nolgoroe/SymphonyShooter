@@ -101,6 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   destrroyAfterSeconds: 2
+  currentSpeed: 0
+  currentDMG: 0
+  currentPierce: 0
 --- !u!60 &2221056474357504110
 PolygonCollider2D:
   m_ObjectHideFlags: 0
